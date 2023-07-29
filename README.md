@@ -1,2 +1,3 @@
-# RSS-Notifier
-PythonでRSSを一定時間ごとに取得するためのやつ
+# APOD-Notifier
+
+1日1回12時にAPODのリンクとかを投稿してくれるBot
