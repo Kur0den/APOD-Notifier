@@ -1,3 +1,3 @@
 # APOD-Notifier
 
-1日1回12時にAPODのリンクとかを投稿してくれるBot
+1日1回12時にAPODのリンクとかを投稿してくれるMisskeyBot
