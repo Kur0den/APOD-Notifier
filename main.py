@@ -26,13 +26,11 @@ def job():
     parser = MyParser()
     parser.feed(parse_data['rss']['channel']['item'][1]['description']) # 説明文を取得
 
-    mk.notes_create(f'TEST\n[今日のAPOD]({parse_data["rss"]["channel"]["item"][1]["link"]})\nTitle: {parse_data["rss"]["channel"]["item"][1]["title"]}\nDesc: {parser.desc}') # Misskeyにノートを送信
+    mk.notes_create(f'[今日のAPOD]({parse_data["rss"]["channel"]["item"][1]["link"]})\nTitle: {parse_data["rss"]["channel"]["item"][1]["title"]}\nDesc: {parser.desc}') # Misskeyにノートを送信
 
-job()
-
-'''schedule.every().day.at("12:00", "Asia/Tokyo").do(job)
+schedule.every().day.at("12:00", "Asia/Tokyo").do(job)
 
 # ずっと実行させるやつ(?)
 while True:
     schedule.run_pending()
-    time.sleep(1)'''
+    time.sleep(1)
