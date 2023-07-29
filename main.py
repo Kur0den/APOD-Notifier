@@ -30,7 +30,10 @@ def job():
 
 schedule.every().day.at("12:00", "Asia/Tokyo").do(job)
 
+print('ready')
+
 # ずっと実行させるやつ(?)
 while True:
     schedule.run_pending()
     time.sleep(1)
+
