@@ -4,3 +4,4 @@ xmltodict
 python-dotenv
 requests
 pytz
+websockets
