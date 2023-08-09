@@ -53,10 +53,14 @@ async def runner(): # 生存確認用(Misskey上でメンションしたら反�
         while True:
             msg = json.loads(await ws.recv())
             if msg['body']['type'] == 'mention': # メンション時に反応
+                print('ping')
                 note_id = msg['body']['body']['id']
                 user_name = msg['body']['body']['user']['username']
                 user_host = msg['body']['body']['user']['host']
-                mk.notes_create(text=f'@{user_name}@{user_host} Pong!', reply_id=note_id) # Pong!
+                if user_host == None:
+                    mk.notes_create(text=f'@{user_name} Pong!', reply_id=note_id) # Pong!
+                else:
+                    mk.notes_create(text=f'@{user_name}@{user_host} Pong!', reply_id=note_id) # Pong!
 
 
 
